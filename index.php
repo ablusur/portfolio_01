@@ -79,6 +79,7 @@
       </div>
     </nav>
 
+    
     <!-- Slider section 3rd -->
     <div
       id="myCoursel"
