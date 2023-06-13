@@ -36,8 +36,8 @@
         <div class="col-md-3" id="navDiv">
           <h4 id="title">CONTROLS</h4>
           <ul id="navList">
-            <li><a href="">Admin Home</a></li>
-            <li><a href="">Edit Profile</a></li>
+            <li><a href="home.php">Admin Home</a></li>
+            <li><a href="edit_profile.php">Edit Profile</a></li>
             <li><a href="">Change Password</a></li>
             <li><a href="">Manage Admin</a></li>
             <li><a href="">Manage Employee</a></li>
