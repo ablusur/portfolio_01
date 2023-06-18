@@ -32,7 +32,7 @@
         margin-top: 50px;
         border-color: lightslategray;
         border-radius:15px;
-        background-color: hsla(200, 100%, 35%, 0.8);
+        background-color: hsla(200, 100%, 35%, 0.8)
     </style>
   </head>
 

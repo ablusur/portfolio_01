@@ -38,8 +38,8 @@
           <ul id="navList">
             <li><a href="home.php">Admin Home</a></li>
             <li><a href="edit_profile.php">Edit Profile</a></li>
-            <li><a href="">Change Password</a></li>
-            <li><a href="">Manage Admin</a></li>
+            <li><a href="change_password.php">Change Password</a></li>
+            <li><a href="manage_admin.php">Manage Admin</a></li>
             <li><a href="">Manage Employee</a></li>
             <li><a href="">Add News</a></li>
             <li><a href="">Add Videos</a></li>
