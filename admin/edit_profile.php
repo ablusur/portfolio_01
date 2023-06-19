@@ -12,7 +12,6 @@
 
 
     <div class="form-group">
-
       <label class="control-label col-sm-2" for="">Name:</label>
       <div class="col-sm-10">
         <input
@@ -27,7 +26,6 @@
 
 
     <div class="form-group">
-
       <label class="control-label col-sm-2" for="">Email:</label>
       <div class="col-sm-10">
         <input
@@ -42,7 +40,6 @@
 
 
     <div class="form-group">
-
       <label class="control-label col-sm-2" for="">Phone: </label>
       <div class="col-sm-10">
         <input
@@ -56,8 +53,7 @@
     </div>
 
 
-    <div class="form-group">
-      
+    <div class="form-group">    
       <label class="control-label col-sm-2" for="">Address: </label>
       <div class="col-sm-10">
         <input

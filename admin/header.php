@@ -40,8 +40,8 @@
             <li><a href="edit_profile.php">Edit Profile</a></li>
             <li><a href="change_password.php">Change Password</a></li>
             <li><a href="manage_admin.php">Manage Admin</a></li>
-            <li><a href="">Manage Employee</a></li>
-            <li><a href="">Add News</a></li>
+            <li><a href="manage_employee.php">Manage Employee</a></li>
+            <li><a href="add_news.php">Add News</a></li>
             <li><a href="">Add Videos</a></li>
             <li><a href="">Manage Videos</a></li>
             <li><a href="">Show Feedbacks</a></li>
