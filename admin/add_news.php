@@ -40,7 +40,11 @@
     <div class="form-group">
       <div class="col-sm-12">
        <textarea class="form-control" name="newsD" id="newsD" cols="30" rows="10" placeholder="Enter News Discription"></textarea>
+        <script>
+          
+          CKEDITOR.replace('newsD');
 
+        </script>
          </div>
 
       </div>

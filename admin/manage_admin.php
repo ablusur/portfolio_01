@@ -57,10 +57,10 @@
 
                 <tr>
                     <td>3</td>
-                    <td>Md. Masud Rana</td>
-                    <td>masud.rana@gmeil.com</td>
-                    <td>01766637097</td>
-                    <td>Sherpur, Mymensingh</td>
+                    <td>Md. Abdullah A Faruk</td>
+                    <td>faruk@united.com.bd</td>
+                    <td>01914001538</td>
+                    <td>Gazipur, Dhaka</td>
                     <td><a href="" class="btn btn-danger">Delete</a></td>
                 </tr>
             </table>

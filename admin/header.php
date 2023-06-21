@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>homepage</title>
 
-    <link rel="stylesheet" href="style.css" />
-
     <!-- Latest compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -19,7 +17,33 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- CKeditors Link -->
+    <script type="text/javascript" src="../tools/ckeditor_4.21.0_standard/ckeditor/ckeditor.js" ></script>
+
+    <!-- Fancybox Link -->
+    <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancybox/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="fancyBox/jquery.fancybox.css" media="screen"/>
+
+    <script type="text/javascript">
+
+    $(document).ready(
+
+      function() {
+        $('.fancybox').fancybox();
+      }
+    );
+
+
+    </script>
+
+
+
+    <link rel="stylesheet" href="style.css" />
+
   </head>
+
   <body>
     <!-- Header div section -->
 
@@ -42,6 +66,7 @@
             <li><a href="manage_admin.php">Manage Admin</a></li>
             <li><a href="manage_employee.php">Manage Employee</a></li>
             <li><a href="add_news.php">Add News</a></li>
+            <li><a href="manage_news.php">Manage News</a></li>
             <li><a href="">Add Videos</a></li>
             <li><a href="">Manage Videos</a></li>
             <li><a href="">Show Feedbacks</a></li>
@@ -49,3 +74,5 @@
             <li><a href="">Log Out</a></li>
           </ul>
         </div>
+
+
