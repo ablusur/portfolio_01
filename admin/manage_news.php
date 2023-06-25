@@ -79,7 +79,7 @@
 
 
 
-                <div id="magicDv" style="display:none">
+            <div id="magicDv" style="display:none">
                 <h3>SRK on his Bollywood journey</h3>
                 <h5>20 June, 2023</h5>
                 <img src="../images/skhan.jpg" alt="" style="width:300px;">

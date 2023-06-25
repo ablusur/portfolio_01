@@ -67,9 +67,9 @@
             <li><a href="manage_employee.php">Manage Employee</a></li>
             <li><a href="add_news.php">Add News</a></li>
             <li><a href="manage_news.php">Manage News</a></li>
-            <li><a href="">Add Videos</a></li>
-            <li><a href="">Manage Videos</a></li>
-            <li><a href="">Show Feedbacks</a></li>
+            <li><a href="add_videos.php">Add Videos</a></li>
+            <li><a href="manage_videos.php">Manage Videos</a></li>
+            <li><a href="show_feedbacks.php">Show Feedbacks</a></li>
             <li><a href="">Total Subscribers</a></li>
             <li><a href="">Log Out</a></li>
           </ul>

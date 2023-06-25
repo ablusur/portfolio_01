@@ -1,3 +1,24 @@
+<?php
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,42 +70,31 @@
         <h4 style="color: red"><b> A D M I N &nbsp; &nbsp; L O G I N </b></h4>
         <div class="row">
           <div class="col-sm-3"></div>
+
           <div class="col-sm-6 thumbnail">
-            <form action="#" method="" class="form-horizontal">
-              <div class="form-group">
-                <div class="col-sm-12">
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    placeholder="Enter Your Email"
-                    required
-                  />
-                </div>
-              </div>
+            <form action="login.php" method="post" class="form-horizontal">
+
 
               <div class="form-group">
                 <div class="col-sm-12">
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="password"
-                    placeholder="Enter Your Password"
-                    required
-                  />
+                  <input type="email" class="form-control" name="email" placeholder="Enter Your Email" required />
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="password" class="form-control" name="password" placeholder="Enter Your Password" required />
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-offset-10 col-sm-2">
-                  <input
-                    type="submit"
-                    class="btn btn-info"
-                    value="LOGIN"
-                    required
-                  />
+                  <input type="submit" class="btn btn-info" value="LOGIN" required />
                 </div>
               </div>
+
+
             </form>
           </div>
           <div class="col-sm-3"></div>
