@@ -1,12 +1,49 @@
 <?php
 
 
+session_start();
+session_destroy();
 
 
 
+include_once '../config/database.php';
+
+$db = new Database();
 
 
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $query = "select * from admin where email='$email' and password='$password'";
+
+  $result = $db->select($query);
+
+if($result){
+  while($row = mysqli_fetch_assoc($result)){
+
+
+     session_start();
+     $_SESSION['name'] ="admin";
+     $_SESSION['id'] =$row['id'];
+
+
+    header("location: home.php");
+
+  }
+}else{
+
+ echo "<script>
+  
+  alert('Login Failed! E-mail or Password did not match')
+  
+  </script>";
+  
+
+    }
+
+}
 
 
 
@@ -20,7 +57,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,13 +85,16 @@
               background-size: cover;
             }
 
-      .thumbnail {
-        padding: 50px;
-        margin-top: 50px;
-        border-color: lightslategray;
-        border-radius:15px;
-        background-color: hsla(200, 100%, 35%, 0.8)
+            .thumbnail {
+              padding: 50px;
+              margin-top: 50px;
+              border-color: lightslategray;
+              border-radius:15px;
+              background-color: hsla(200, 100%, 35%, 0.8)
+
+            }
     </style>
+
   </head>
 
   <body>

@@ -1,3 +1,30 @@
+<?php
+
+  session_start();
+
+
+  if($_SESSION['name'] != "admin"){
+
+    header("Location: login.php");
+
+  }
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -71,7 +98,7 @@
             <li><a href="manage_videos.php">Manage Videos</a></li>
             <li><a href="show_feedbacks.php">Show Feedbacks</a></li>
             <li><a href="">Total Subscribers</a></li>
-            <li><a href="">Log Out</a></li>
+            <li><a href="logout.php">Log Out</a></li>
           </ul>
         </div>
 
