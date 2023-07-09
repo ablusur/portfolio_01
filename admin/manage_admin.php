@@ -6,9 +6,9 @@ include('header.php');
 
 $db = new Database();
 
-if(isset($_GET['deleteId'])){
+if(isset($_GET['deleteID'])){
 
-    $dId = $_GET['deleteId'];
+    $dId = $_GET['deleteID'];
 
     $del_sql = "delete from admin where id = '$dId'";
 
