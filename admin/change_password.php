@@ -14,17 +14,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $r_pass = $_POST['r_pass'];
 
 
-  $query = "SELECT * FROM ADMIN WHERE id = '$id'";
+  $query = "select * from admin where id = '$id'";
   $result = $db->select($query);
 
 
   if($result){
-    while($row = $db->mysqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($result)){
 
       if($row['password'] != $o_pass){
 
         echo "<script> 
-        alert('Wrong Password. Please try again');
+        alert('Old password is Wrong! Please try again');
         </script>";
 
 
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         }else{
           $sql = "update admin set password = '$n_pass' where id = '$id'";
-          $res = $db->update($sql)
+          $res = $db->update($sql);
 
           if($res){
 
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               alert('Password Changed Successfully');
               </script>";
 
-            header("refresh:0"); 
+            header("Refresh:0"); 
 
           }else{
               echo "<script>
@@ -101,8 +101,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div class="form-group">
       <label class="control-label col-sm-3" for="">New Password: </label>
       <div class="col-sm-9">
-        <input type="password" class="form-control" id="n_pass" name="n_pass"
-          placeholder="Enter Your New Password" />
+        <input type="password" class="form-control" id="n_pass" name="n_pass" placeholder="Enter Your New Password" />
       </div>
       </div>
 
@@ -110,12 +109,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div class="form-group">
       <label class="control-label col-sm-3" for="">Confurm Password: </label>
       <div class="col-sm-9">
-        <input type="password" class="form-control" id="r_pass" name="r_pass"
-          placeholder="Enter Your New Password Again"/>
+        <input type="password" class="form-control" id="r_pass" name="r_pass" placeholder="Enter Your New Password Again"/>
       </div>
     </div>
 
-    
+
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-9">
         <input type="submit" class="btn btn-default" value="U P D A T E" />

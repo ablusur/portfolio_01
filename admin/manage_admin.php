@@ -1,4 +1,39 @@
-<?php include('header.php'); ?>
+<?php 
+
+
+include_once '../config/database.php';
+include('header.php'); 
+
+$db = new Database();
+
+if(isset($_GET['deleteId'])){
+
+    $dId = $_GET['deleteId'];
+
+    $del_sql = "delete from admin where id = '$dId'";
+
+    $del= $db->delete($del_sql);
+
+
+    if($del){
+        header("Location: manage_admin.php");
+
+    }else{
+
+        echo "<script>
+        alert('Delete Failed!');
+        </script>";
+
+    }
+
+
+
+}
+
+
+
+
+?>
 
 
 
@@ -26,6 +61,8 @@
        </div>
 
         <div class="card-body">
+
+
             <table class="table table-bordered">
                 <tr>
                     <th>ID</th>
@@ -37,32 +74,59 @@
                 </tr>
 
 
-                <tr>
-                    <td>1</td>
-                    <td>Md. Ablusur Rahman Lotus</td>
-                    <td>lotusunited10@gmeil.com</td>
-                    <td>01766637097</td>
-                    <td>Jamalpur, Mymensingh</td>
-                    <td><a href="" class="btn btn-danger disabled">Delete</a></td>
-                </tr>
+
+                <?php
+                
+                $query = "select * from admin";
+                $result = $db->select($query);
+                
+
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+
+
+                ?>
+
 
                 <tr>
-                    <td>2</td>
-                    <td>Md. Shakil Islam</td>
-                    <td>shakil.islam@united.com.bd</td>
-                    <td>01914001951</td>
-                    <td>Dewanjonje, Mymensingh</td>
-                    <td><a href="" class="btn btn-danger">Delete</a></td>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['email'];?></td>
+                    <td><?php echo $row['phone'];?></td>
+                    <td><?php echo $row['address'];?></td>
+
+                    <?php
+                    
+                    if($row['id'] == 1){
+                     ?>   
+
+                      <td><a href="" class="btn btn-danger disabled">Delete</a></td>
+                      
+                    <?php
+
+                    }else{
+
+                     ?>   
+                      <td><a href="?deleteID= <?php echo $row['id']; ?> " onclick= "return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a></td>
+
+                      <?php
+
+                    }
+
+                    ?>
+
                 </tr>
 
-                <tr>
-                    <td>3</td>
-                    <td>Md. Abdullah A Faruk</td>
-                    <td>faruk@united.com.bd</td>
-                    <td>01914001538</td>
-                    <td>Gazipur, Dhaka</td>
-                    <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
+              
+
+                <?php
+
+                    }
+                }
+
+                
+                ?>
+
             </table>
         </div>
 

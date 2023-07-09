@@ -1,4 +1,48 @@
-<?php include('header.php'); ?>
+<?php 
+
+
+include_once '../config/database.php';
+include('header.php'); 
+
+$db = new Database();
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$password = $_POST['password'];
+
+if(empty($name) || empty($email) || empty($phone) || empty($address) || empty($password)){
+
+echo "<script>alert('Every filed must be fullfilled');</script>";
+
+}else{
+  $sql = "insert into admin(name, email, phone, address, password) values('$name','$email','$phone','$address','$password')";
+ $result = $db->insert($sql);
+
+if($result){
+  echo "<script>
+  
+  alert('Inserted Succcessfully');
+  
+  window.location.href = 'manage_admin.php';
+  
+  </script>";
+
+}else{
+  echo "<script>
+  alert('Insertion Failed!');  
+  </script>";
+}
+
+}
+
+}
+
+
+?>
 
 
 
@@ -10,7 +54,9 @@
   font-size: 20px;
   padding: 30px 2px; margin-left:-10px" >Add New Admin</h4>
 
-<form class="form-horizontal" action="" method="" style="width:80%;">
+
+<form class="form-horizontal" action="add_admin.php" method="post" style="width:80%;">
+
 
 <div class="form-group">
       <label class="control-label col-sm-2" for="">Name: </label>
@@ -18,6 +64,7 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Admin Name" />
       </div>
     </div>
+
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="">E-mail: </label>

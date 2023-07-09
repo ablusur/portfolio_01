@@ -71,7 +71,7 @@ public function select($sql){
 
 
 //update function
-public  function update($sql){
+public function update($sql){
 
     $result = mysqli_query($this->link, $sql) or die ($this->link->error.__LINE__);
 
