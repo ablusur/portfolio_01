@@ -34,7 +34,7 @@
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Position</th>
-                    <th>Images</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
 

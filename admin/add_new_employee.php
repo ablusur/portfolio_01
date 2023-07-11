@@ -1,4 +1,78 @@
-<?php include('header.php'); ?>
+<?php 
+
+
+include_once '../config/database.php';
+include('header.php'); 
+
+$db = new Database();
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$position = $_POST['position'];
+
+
+$permited = array('jpg', 'jpeg', 'png');
+
+$photo_name = $_FILES['photo']['name'];
+$photo_size = $_FILES['photo']['size'];
+$photo_temp = $_FILES['photo']['tmp_name'];
+
+
+$div = explode('.', $photo_name); //image.PNG
+
+$file_extension = strtolower(end($div));
+
+
+$unique_name = substr(md5(time()), 0, 10). '.' . $file_extension;
+$upload_photo = "upload/team/". $unique_name;
+
+
+if($photo_size > 1048576){
+      echo "<script> 
+      alert('File must be less then 1MB.')
+      </script>";
+}elseif(in_array($file_extension, $permited) == false){
+
+      echo "<script> 
+      alert('You can upload only jpg, jepg, png, gif format image.')
+      </script>";
+
+}else{
+  move_uploaded_file($photo_temp, $upload_photo);
+
+  $sql = "insert into employee(name, email, phone, address, position, photo) values ('$name', '$email', '$phone', '$address','$position', '$upload_photo')";
+
+  $result = $db->insert($sql);
+
+  if($result){
+
+    echo "<script>
+          alert('Insert Successfully');
+          window.location.href = 'manage_employee.php';
+          </script>";
+
+
+  }else{
+
+    echo "<script>
+          alert('Insertation Failed!');
+          </script>";
+        }
+
+    }
+
+
+
+
+}
+
+
+?>
+
 
 
 
@@ -10,7 +84,7 @@
   font-size: 20px;
   padding: 30px 2px; margin-left:-10px" >Add New Employee</h4>
 
-<form class="form-horizontal" action="" method="" style="width:80%;" enctype="multipart/form_data">
+<form class="form-horizontal" action="" method="post" style="width:80%;" enctype="multipart/form-data">
 
 
 <div class="form-group">
